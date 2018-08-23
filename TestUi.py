@@ -12,6 +12,12 @@ class myMainwin(QMainWindow,Ui_MainWin):
     def initData(self,msg):
         #收到login窗口的信号，根据传入参数，初始化主窗口数据并显示
         print("recive signle :",msg)
+        打开数据库
+        self.db = QSqlDatabase.addDatabase('QSQLITE')
+        self.db.setDatabaseName('database.db')
+        if not self.db.open():
+            QtWidgets.QMessageBox.critical(None,("无法打开数据库"),("myLoginUI:初始化数据库失败"),QtWidgets.QMessageBox.Cancel)
+            return False
         self.show()
 
 if __name__ == '__main__':

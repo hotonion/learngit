@@ -9,7 +9,7 @@ from PyQt5.QtCore import pyqtSignal
 from functools import partial
 import sys
 
-gongduiming = ["灵寿网电工队","安国网电工队","肃宁北网电工队","行别营网电工队","沧西网电工队","黄骅南网电工队","黄骅港网电工队","北港电务电力工队","神港电务电力工队"]
+unit = ["灵寿网电工队","安国网电工队","肃宁北网电工队","行别营网电工队","沧西网电工队","黄骅南网电工队","黄骅港网电工队","北港电务电力工队","神港电务电力工队"]
 
 
 class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
@@ -20,7 +20,7 @@ class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
         super(QtWidgets.QDialog,self).__init__()
         self.setupUi(self)
         self.lineEdit_passwd.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.comboBox_gongdui.addItems(gongduiming)
+        self.comboBox_gongdui.addItems(unit)
         
  
         

@@ -46,5 +46,5 @@ class Ui_Dialog_login(object):
         Dialog_login.setWindowTitle(_translate("Dialog_login", "电力设备履历录入系统"))
         self.label.setText(_translate("Dialog_login", "用户名："))
         self.label_2.setText(_translate("Dialog_login", "密码："))
-        self.label_3.setText(_translate("Dialog_login", "工队："))
+        self.label_3.setText(_translate("Dialog_login", "单位："))
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>798</width>
-    <height>600</height>
+    <width>1024</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="exitBtn">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>500</y>
+      <x>940</x>
+      <y>680</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>500</y>
+      <x>850</x>
+      <y>680</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -45,8 +45,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>471</width>
-      <height>481</height>
+      <width>1011</width>
+      <height>681</height>
      </rect>
     </property>
     <property name="tabletTracking">
@@ -57,69 +57,293 @@
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
-      <string>表格一</string>
+      <string>历史概况</string>
      </attribute>
      <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>371</width>
-        <height>321</height>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
        </rect>
       </property>
-     </widget>
-     <widget class="QScrollBar" name="horizontalScrollBar">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>340</y>
-        <width>371</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QScrollBar" name="verticalScrollBar">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>16</width>
-        <height>321</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
+      <row>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>2</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>3</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>4</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>5</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>6</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>7</string>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>年度</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>概况记录</string>
+       </property>
+      </column>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>表格二</string>
+      <string>设备概况表</string>
      </attribute>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1011</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>顺号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>项目名称</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>单位</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2001年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2002年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2003年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2004年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2005年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2006年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2007年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2008年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2009年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2010年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2011年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2012年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2013年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2014年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2015年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2016年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2017年</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>2018年</string>
+       </property>
+      </column>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
-      <string>表格三</string>
+      <string>设备汇总表 (设备变更履历表)</string>
      </attribute>
+     <widget class="QTableWidget" name="tableWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>表格四</string>
+      <string>分段</string>
      </attribute>
+     <widget class="QTableWidget" name="tableWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
-      <string>表格五</string>
+      <string>分相</string>
      </attribute>
+     <widget class="QTableWidget" name="tableWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_6">
      <attribute name="title">
-      <string>表格6</string>
+      <string>隔开</string>
      </attribute>
+     <widget class="QTableWidget" name="tableWidget_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>跨越</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>桥梁</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_9">
+     <attribute name="title">
+      <string>上网点</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>781</width>
+        <height>481</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -128,8 +352,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>798</width>
-     <height>23</height>
+     <width>1024</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="nativeMenuBar">

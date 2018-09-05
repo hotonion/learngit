@@ -9,7 +9,7 @@ from PyQt5.QtCore import pyqtSignal
 from functools import partial
 import sys
 
-unit = ["灵寿网电工队","安国网电工队","肃宁北网电工队","行别营网电工队","沧西网电工队","黄骅南网电工队","黄骅港网电工队","北港电务电力工队","神港电务电力工队"]
+unit = ["灵寿网电工队","安国网电工队","肃宁北网电工队","行别营网电工队","沧西网电工队","黄骅南网电工队","黄骅港网电工队","北港电务电力工队","神港电务电力工队","定西供电工队"]
 
 
 class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
@@ -34,7 +34,10 @@ class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
             print(QtWidgets.QMessageBox.warning(self, "警告", "用户名和密码不可为空!", QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.Yes))
             return False
 
-        self.db = QSqlDatabase.addDatabase('QSQLITE')
+        if QSqlDatabase.contains("qt_sql_default_connection"):
+            self.db = QSqlDatabase.database("qt_sql_default_connection")
+        else:
+            self.db = QSqlDatabase.addDatabase('QSQLITE')
         self.db.setDatabaseName('database.db')
         if not self.db.open():
             QtWidgets.QMessageBox.critical(None,("无法打开数据库"),("myLoginUI:初始化数据库失败"),QtWidgets.QMessageBox.Cancel)
@@ -47,19 +50,15 @@ class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
         query.exec_()
         if (not query.next()):
             QtWidgets.QMessageBox.information(self, "提示", "该账号不存在!", QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.Yes)
+            self.db.close()
         else:
             #验证正确，隐藏当前窗口，给主窗口发消息
+            self.db.close()
             print(query.value(3))
             self.hide()
-            
-            
             self.login_success_signal.emit(unit)
+        return True
 
-        # query.exec_("select * from user where name == '1' and password == '1' and unit =='灵寿网电工队'")
-        # query.exec_("select * from user")
-        # print(query.value(0))
-        self.db.close()
-        pass
     def closeEvent(self,event):
         self.db.close()
     #点击退出按钮操作

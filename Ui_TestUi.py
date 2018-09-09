@@ -30,7 +30,7 @@ class Ui_MainWin(object):
         self.tableWidget.setGeometry(QtCore.QRect(0, 0, 781, 481))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(2)
-        self.tableWidget.setRowCount(17)
+        self.tableWidget.setRowCount(17)#17
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -171,7 +171,7 @@ class Ui_MainWin(object):
         self.retranslateUi(MainWin)
         self.tabWidget.setCurrentIndex(0)
         self.exitBtn.clicked.connect(MainWin.close)
-        self.pushButton.clicked.connect(MainWin.showFullScreen)
+        # self.pushButton.clicked.connect(MainWin.showFullScreen)
         QtCore.QMetaObject.connectSlotsByName(MainWin)
 
     def retranslateUi(self, MainWin):

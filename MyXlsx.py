@@ -48,7 +48,7 @@ def readData(worksheet):
 8桥梁-------------------------------------tableWidget_8
 9上网点-----------------------------------tableWidget_9
 '''
-def saveSheet(filename='',table = QTableWidget):
+def saveSheet(filename='', unit = '', table = QTableWidget):
     workbook = xlsxwriter.Workbook(filename)
     worksheet = workbook.add_worksheet(table.objectName())
     if worksheet.get_name() == 'tableWidget':
@@ -66,15 +66,15 @@ def saveSheet(filename='',table = QTableWidget):
         #合并title区域单元格
         worksheet.merge_range(0, 0, 0, 1,"历史概况履历表",titleFormat)
 
-        title2LeftFormat = workbook.add_format()
-        title2LeftFormat.set_bold()
-        title2LeftFormat.set_font_name('宋体')  # 设置字体样式为雅黑
-        title2LeftFormat.set_font_size(10)  # 设置字体大小为10
-        title2LeftFormat.set_align('center')
-        title2LeftFormat.set_align('vcenter')  # 设置垂直居中对齐
-        # title2left = "部门（工队）：" + "定西供电工队"
-        title2left = "部门（工队）：定西供电工队                                                                                肃技-网1"
-        worksheet.merge_range(1, 0, 1, 1, title2left, title2LeftFormat)
+        title2Format = workbook.add_format()
+        title2Format.set_bold()
+        title2Format.set_font_name('宋体')  # 设置字体样式为雅黑
+        title2Format.set_font_size(10)  # 设置字体大小为10
+        title2Format.set_align('center')
+        title2Format.set_align('vcenter')  # 设置垂直居中对齐
+
+        # title2left = "部门（工队）：定西供电工队                                                                                肃技-网1"
+        worksheet.merge_range(1, 0, 1, 1, fillspaces('部门（工队）' + unit,'肃技-网1'), title2Format)
 
 
         title3Format = workbook.add_format()
@@ -116,7 +116,7 @@ def saveSheet(filename='',table = QTableWidget):
                 # print(item.text())
                 # worksheet.write(row + 3, column, item.text(),merge_format)
                 if column == 0:
-                    worksheet.write(row + 3, column, item.text(),yearFormat)
+                    worksheet.write(row + 3, column, item.text(), yearFormat)
                 elif column == 1:
                     # worksheet.merge_range(row + 3, 1, row + 3, 2, item.text(),merge_format)
                     worksheet.write(row + 3, column, item.text(), profileFormat)
@@ -174,17 +174,17 @@ def testsheet():
         # worksheet.write(1, 1, title2right, title2RightFormat)
 
 
-        title2LeftFormat = workbook.add_format()
-        title2LeftFormat.set_bold()
-        title2LeftFormat.set_font_name('宋体')  # 设置字体样式为雅黑
-        title2LeftFormat.set_font_size(10)  # 设置字体大小为10
-        title2LeftFormat.set_align('center')
-        title2LeftFormat.set_align('vcenter')  # 设置垂直居中对齐
+        title2Format = workbook.add_format()
+        title2Format.set_bold()
+        title2Format.set_font_name('宋体')  # 设置字体样式为雅黑
+        title2Format.set_font_size(10)  # 设置字体大小为10
+        title2Format.set_align('center')
+        title2Format.set_align('vcenter')  # 设置垂直居中对齐
         # title2left = "部门（工队）：" + "定西供电工队"
         title2left = "部门（工队）：定西供电工队                                                                                肃技-网1"
-        # worksheet.write(1, 0, title2left, title2LeftFormat)
-        # worksheet.set_row(1, None, title2LeftFormat)
-        worksheet.merge_range(1, 0, 1, 1, title2left, title2LeftFormat)
+        # worksheet.write(1, 0, title2left, title2Format)
+        # worksheet.set_row(1, None, title2Format)
+        worksheet.merge_range(1, 0, 1, 1, title2left, title2Format)
 
 
 
@@ -210,7 +210,10 @@ def testsheet():
         pass
     workbook.close()
 
-
+def fillspaces(strStart = '', strEnd = '', lineNum = 115):
+    spacesNum = lineNum - int((strStart.encode('utf-8').__len__() - strStart.__len__()) / 2 + strStart.__len__())
+    str = strStart + strEnd.rjust(spacesNum)
+    return str
 
 if __name__ == '__main__':
     testsheet()

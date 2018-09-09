@@ -21,9 +21,17 @@ class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
         self.setupUi(self)
         self.lineEdit_passwd.setEchoMode(QtWidgets.QLineEdit.Password)
         self.comboBox_gongdui.addItems(unit)
-        
+        self.openDb()
  
-        
+    def openDb(self):
+        if QSqlDatabase.contains("qt_sql_default_connection"):
+            self.db = QSqlDatabase.database("qt_sql_default_connection")
+        else:
+            self.db = QSqlDatabase.addDatabase('QSQLITE')
+        self.db.setDatabaseName('database.db')
+        if not self.db.open():
+            QtWidgets.QMessageBox.critical(None,("无法打开数据库"),("myLoginUI:初始化数据库失败"),QtWidgets.QMessageBox.Cancel)
+            return False
     #点击登录按钮操作
     def accept(self):
         unit = ''
@@ -32,15 +40,6 @@ class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
         unit = self.comboBox_gongdui.currentText()
         if (username == "" or password == ""):
             print(QtWidgets.QMessageBox.warning(self, "警告", "用户名和密码不可为空!", QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.Yes))
-            return False
-
-        if QSqlDatabase.contains("qt_sql_default_connection"):
-            self.db = QSqlDatabase.database("qt_sql_default_connection")
-        else:
-            self.db = QSqlDatabase.addDatabase('QSQLITE')
-        self.db.setDatabaseName('database.db')
-        if not self.db.open():
-            QtWidgets.QMessageBox.critical(None,("无法打开数据库"),("myLoginUI:初始化数据库失败"),QtWidgets.QMessageBox.Cancel)
             return False
         query = QSqlQuery()
         query.prepare("select * from user where name == ? and password == ? and unit ==?");
@@ -71,7 +70,10 @@ class myDb():
         self.createDb()
 
     def createDb(self):
-        self.db = QSqlDatabase.addDatabase('QSQLITE')
+        if QSqlDatabase.contains("qt_sql_default_connection"):
+            self.db = QSqlDatabase.database("qt_sql_default_connection")
+        else:
+            self.db = QSqlDatabase.addDatabase('QSQLITE')
         self.db.setDatabaseName('database.db')
         if not self.db.open():
             QtWidgets.QMessageBox.critical(None,("无法打开数据库"),("creataDb:无法打开数据库"),QtWidgets.QMessageBox.Cancel)

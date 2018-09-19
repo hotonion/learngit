@@ -6,37 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>392</width>
+    <height>264</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>电力设备履历录入系统</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>50</y>
-     <width>48</width>
-     <height>16</height>
+     <x>40</x>
+     <y>34</y>
+     <width>71</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>用户名：</string>
@@ -45,11 +35,17 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>66</x>
-     <y>90</y>
-     <width>36</width>
-     <height>16</height>
+     <x>57</x>
+     <y>92</y>
+     <width>51</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>密码：</string>
@@ -58,33 +54,45 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>66</x>
-     <y>140</y>
-     <width>36</width>
-     <height>16</height>
+     <x>60</x>
+     <y>150</y>
+     <width>51</width>
+     <height>20</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>工队：</string>
+    <string>单位：</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_user">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>50</y>
-     <width>133</width>
-     <height>20</height>
+     <y>30</y>
+     <width>211</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_passwd">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>90</y>
-     <width>133</width>
-     <height>20</height>
+     <y>88</y>
+     <width>211</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
@@ -92,46 +100,45 @@
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>140</y>
-     <width>131</width>
-     <height>20</height>
+     <y>145</y>
+     <width>211</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>210</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>登陆</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>210</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>退出</string>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Dialog_login</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>Dialog_login</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -3,10 +3,10 @@
 
 import sys
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QHeaderView, QAction, QFileDialog, QTableWidgetItem, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QHeaderView, QAction, QFileDialog, QTableWidgetItem, QMessageBox,QHeaderView
 from Ui_TestUi import Ui_MainWin
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery, QSqlTableModel, QSqlRecord
-from PyQt5.QtGui import QMouseEvent
+from PyQt5.QtGui import QMouseEvent, QIcon
 from PyQt5.QtCore import Qt, qDebug
 from textEditDialog import textEditDialog
 import xlsxwriter
@@ -17,6 +17,7 @@ class myMainwin(QMainWindow, Ui_MainWin):
         super(QMainWindow, self).__init__()
         self.setupUi(self)
         self.unit = ''
+        self.setWindowIcon(QIcon("icon-96x96.png"))
         # 隐藏垂直表头
         self.tableWidget.verticalHeader().setVisible(False)
         # 隐藏水平表头
@@ -25,8 +26,14 @@ class myMainwin(QMainWindow, Ui_MainWin):
         # self.textEdit = QtWidgets.QTextEdit()
         # self.tableWidget.setCellWidget(1, 1, self.textEdit)
         # self.tableWidget.resizeColumnsToContents()
-        self.tableWidget.setColumnWidth(1,600)
+        # self.tableWidget.setColumnWidth(1,600)
         self.tableWidget.setWordWrap(True)
+
+        # 设置最后一行沾满整个格
+        tableHeader = self.tableWidget.horizontalHeader()
+        tableHeader.setStretchLastSection(True)
+        # 设置表头背景颜色
+        tableHeader.setStyleSheet("QHeaderView::section{background-color:rgb(00,00,255);}")
         self.tableWidget.cellDoubleClicked.connect(self.mycellDoubleClicked)
         self.pushButton.clicked.connect(self.saveData)
         # 菜单初始化
@@ -127,6 +134,9 @@ class myMainwin(QMainWindow, Ui_MainWin):
     def saveData(self):
 
         #todo 弹出警告对话框，要求用户确认是否保存数据
+        reply = QtWidgets.QMessageBox.warning(self, "警告", "即将保存更改至数据库是否继续?", QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No, QtWidgets.QMessageBox.Yes)
+        if reply == QMessageBox.No:
+            return True
 
         if self.db.isOpen() != True:
             if self.opendb() != True:
@@ -227,4 +237,4 @@ if __name__ == '__main__':
     test = myMainwin()
     test.show()
     # test.mouseDoubleClickEvent()
-    exit(app.exec_())
+    sys.exit(app.exec_())

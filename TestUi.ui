@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
+    <width>1018</width>
     <height>768</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="exitBtn">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>680</y>
+      <x>930</x>
+      <y>690</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -30,14 +30,14 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>680</y>
+      <x>830</x>
+      <y>690</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>OK</string>
+     <string>保存</string>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
@@ -64,8 +64,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>781</width>
-        <height>481</height>
+        <width>1011</width>
+        <height>661</height>
        </rect>
       </property>
       <row>
@@ -112,10 +112,58 @@
        <property name="text">
         <string>年度</string>
        </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>概况记录</string>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="background">
+        <color>
+         <red>0</red>
+         <green>0</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>0</blue>
+         </color>
+        </brush>
        </property>
       </column>
      </widget>
@@ -249,8 +297,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>781</width>
-        <height>481</height>
+        <width>1011</width>
+        <height>661</height>
        </rect>
       </property>
      </widget>
@@ -264,8 +312,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>781</width>
-        <height>481</height>
+        <width>1011</width>
+        <height>661</height>
        </rect>
       </property>
      </widget>
@@ -352,7 +400,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1024</width>
+     <width>1018</width>
      <height>26</height>
     </rect>
    </property>
@@ -419,28 +467,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>597</x>
-     <y>534</y>
+     <x>930</x>
+     <y>716</y>
     </hint>
     <hint type="destinationlabel">
      <x>398</x>
      <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWin</receiver>
-   <slot>showFullScreen()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>440</x>
-     <y>535</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>461</x>
-     <y>397</y>
     </hint>
    </hints>
   </connection>

@@ -3,6 +3,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtSql import QSqlDatabase,QSqlQuery
+from PyQt5.QtGui import QIcon
 from Ui_Login import Ui_Dialog_login
 from TestUi import myMainwin
 from PyQt5.QtCore import pyqtSignal
@@ -19,8 +20,11 @@ class myLoginUI(QtWidgets.QDialog,Ui_Dialog_login):
     def __init__(self):
         super(QtWidgets.QDialog,self).__init__()
         self.setupUi(self)
+        self.setWindowIcon(QIcon("icon-96x96.png"))
         self.lineEdit_passwd.setEchoMode(QtWidgets.QLineEdit.Password)
         self.comboBox_gongdui.addItems(unit)
+        self.pushButton.clicked.connect(self.accept)
+        self.pushButton_2.clicked.connect(self.reject)
         self.openDb()
  
     def openDb(self):
@@ -103,4 +107,4 @@ if __name__ == '__main__':
     mainui = myMainwin()
     test.login_success_signal.connect(mainui.initData)
     # database = myDb()
-    exit(app.exec_())
+    sys.exit(app.exec_())
